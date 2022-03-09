@@ -82,7 +82,7 @@ def load_model(model_name: str = "afhqv2", ):
 
 
 def generate_images(
-    model_name: str,
+    model_name: str = "afhqv2",
     seeds: List[int] = [0],
     truncation_psi: float = 1.,
     noise_mode: str = "truncation_psi",
