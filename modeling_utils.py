@@ -11,7 +11,7 @@ import dnnlib
 import numpy as np
 import PIL.Image
 
-import legacy
+from stylegan3 import legacy
 
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 

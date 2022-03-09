@@ -17,7 +17,7 @@ import numpy as np
 import PIL.Image
 import torch
 
-import legacy
+import stylegan3.legacy
 
 #----------------------------------------------------------------------------
 
