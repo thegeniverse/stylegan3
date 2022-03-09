@@ -1,0 +1,3 @@
+include *.cpp
+include *.cu
+include *.h

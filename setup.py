@@ -10,4 +10,5 @@ setuptools.setup(
     name="stylegan3",
     packages=setuptools.find_packages(),
     install_requires=requirements_list,
+    include_package_data=True,
 )
