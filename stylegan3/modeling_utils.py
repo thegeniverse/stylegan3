@@ -85,7 +85,7 @@ def generate_images(
     model_name: str = "afhqv2",
     seeds: List[int] = [0],
     truncation_psi: float = 1.,
-    noise_mode: str = "truncation_psi",
+    noise_mode: str = "const",
     outdir: str = "./outputs",
     translate: Tuple[float, float] = (0, 0),
     rotate: float = 0.,

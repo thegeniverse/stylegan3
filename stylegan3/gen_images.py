@@ -17,7 +17,7 @@ import numpy as np
 import PIL.Image
 import torch
 
-import stylegan3.legacy
+from stylegan3 import legacy
 
 #----------------------------------------------------------------------------
 
@@ -75,13 +75,17 @@ def make_transform(translate: Tuple[float, float], angle: float):
 
 
 @click.command()
-@click.option('--network',
-              'network_pkl',
-              help='Network pickle filename',
-              required=True)
+@click.option(
+    '--network',
+    'network_pkl',
+    help='Network pickle filename',
+    default=
+    "https://api.ngc.nvidia.com/v2/models/nvidia/research/stylegan3/versions/1/files/stylegan3-r-afhqv2-512x512.pkl",
+    required=True)
 @click.option('--seeds',
               type=parse_range,
               help='List of random seeds (e.g., \'0,1,4-6\')',
+              default='0',
               required=True)
 @click.option('--trunc',
               'truncation_psi',
@@ -114,6 +118,7 @@ def make_transform(translate: Tuple[float, float], angle: float):
               help='Where to save the output images',
               type=str,
               required=True,
+              default="output",
               metavar='DIR')
 def generate_images(network_pkl: str, seeds: List[int], truncation_psi: float,
                     noise_mode: str, outdir: str, translate: Tuple[float,
