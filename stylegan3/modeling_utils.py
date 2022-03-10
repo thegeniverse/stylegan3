@@ -1,12 +1,8 @@
 import os
-import re
 import logging
 from typing import *
 
 import torch
-import omegaconf
-import yaml
-import requests
 import dnnlib
 import numpy as np
 import PIL.Image
@@ -53,7 +49,7 @@ def make_transform(
 
 
 def load_stylegan(
-    config: omegaconf.dictconfig.DictConfig,
+    config,
     ckpt_path: str = None,
 ) -> torch.nn.Module:
     model = None
